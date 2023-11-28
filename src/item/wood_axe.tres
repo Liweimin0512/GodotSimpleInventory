@@ -12,4 +12,6 @@ category = 2
 quantity = 1
 stackable = 1
 weight = 10
-attributes = {}
+attributes = {
+"攻击力": 10
+}
