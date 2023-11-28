@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfb2bsiwl44wm"]
+
+[ext_resource type="Script" path="res://src/item.gd" id="1_0h15c"]
+[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="1_grb51"]
+
+[node name="item" type="MarginContainer"]
+offset_right = 19.0
+offset_bottom = 49.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0h15c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("1_grb51")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "9999"
+horizontal_alignment = 2
+vertical_alignment = 2

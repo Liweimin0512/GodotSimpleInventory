@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdssohk5riv1"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ccqct"]
+[ext_resource type="PackedScene" uid="uid://cgv4kbrho80c8" path="res://src/inventory.tscn" id="2_7smc8"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccqct")
+
+[node name="inventory" parent="." instance=ExtResource("2_7smc8")]
+unique_name_in_owner = true
+layout_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "请输入指令"
+
+[node name="btn_submit" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "提交"

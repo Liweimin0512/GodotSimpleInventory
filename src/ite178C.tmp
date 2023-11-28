@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpmild4bh2ry1"]
+
+[ext_resource type="Script" path="res://src/item_slot.gd" id="1_heeje"]
+
+[node name="item_slot" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_heeje")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
