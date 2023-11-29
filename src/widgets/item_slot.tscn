@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpmild4bh2ry1"]
+
+[ext_resource type="Script" path="res://src/widgets/item_slot.gd" id="1_iibhv"]
+[ext_resource type="PackedScene" uid="uid://cfb2bsiwl44wm" path="res://src/widgets/item_tile.tscn" id="2_gijiy"]
+
+[node name="item_slot" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_iibhv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="item_tile" parent="." instance=ExtResource("2_gijiy")]
+layout_mode = 2

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cpnvwp1yl86va"]
 
 [ext_resource type="Texture2D" uid="uid://dbxonfastqx72" path="res://assets/items/egg.tres" id="1_v410b"]
-[ext_resource type="Script" path="res://src/ItemResource.gd" id="2_movvq"]
+[ext_resource type="Script" path="res://src/items/Item.gd" id="2_movvq"]
 
 [resource]
 script = ExtResource("2_movvq")
@@ -9,7 +9,7 @@ name = "蛋"
 icon = ExtResource("1_v410b")
 description = "可以吃，难得的蛋白质来源"
 category = 1
+max_stack = 20
 quantity = 1
-stackable = 20
 weight = 1
 attributes = {}

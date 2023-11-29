@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ced6kdegijcad"]
+
+[ext_resource type="Texture2D" uid="uid://denlah5iok8hf" path="res://assets/items/wood_axe.tres" id="1_r3mi8"]
+[ext_resource type="Script" path="res://src/items/Item.gd" id="2_3c0s0"]
+
+[resource]
+script = ExtResource("2_3c0s0")
+name = "木斧"
+icon = ExtResource("1_r3mi8")
+description = "木质的，可以砍树"
+category = 2
+max_stack = 1
+quantity = 1
+weight = 10
+attributes = {
+"生命值": 10.0
+}

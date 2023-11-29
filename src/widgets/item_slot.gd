@@ -2,16 +2,16 @@ extends MarginContainer
 
 @onready var reference_rect: ReferenceRect = $ReferenceRect
 @onready var color_rect: ColorRect = %ColorRect
-
+@onready var item_tile: MarginContainer = $item_tile
 
 var item = null:
 	set(value):
-		if item != null:
-			self.remove_child(item)
 		item = value
 		if item != null:
-			self.add_child(item)
-
+			item_tile.update_display(item)
+			item_tile.show()
+		else:
+			item_tile.hide()
 signal pressed
 
 func _ready() -> void:

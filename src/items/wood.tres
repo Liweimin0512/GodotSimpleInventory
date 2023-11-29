@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ciphh2dxkqjpi"]
 
 [ext_resource type="Texture2D" uid="uid://7nkda7ww5sib" path="res://assets/items/wood.tres" id="1_8hgrq"]
-[ext_resource type="Script" path="res://src/ItemResource.gd" id="1_bo33k"]
+[ext_resource type="Script" path="res://src/items/Item.gd" id="1_bo33k"]
 
 [resource]
 script = ExtResource("1_bo33k")
@@ -9,7 +9,7 @@ name = "木材"
 icon = ExtResource("1_8hgrq")
 description = "可以用来生火，或者盖房子。大自然的馈赠"
 category = 3
+max_stack = 20
 quantity = 1
-stackable = 20
 weight = 3
 attributes = {}

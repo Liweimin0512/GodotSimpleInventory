@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfb2bsiwl44wm"]
 
-[ext_resource type="Script" path="res://src/item.gd" id="1_0h15c"]
-[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="1_grb51"]
+[ext_resource type="Script" path="res://src/widgets/item_tile.gd" id="1_f83w0"]
+[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="2_dl8vf"]
 
-[node name="item" type="MarginContainer"]
+[node name="item_tile" type="MarginContainer"]
 offset_right = 19.0
 offset_bottom = 49.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_0h15c")
+script = ExtResource("1_f83w0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(64, 64)
@@ -16,7 +16,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
-texture = ExtResource("1_grb51")
+texture = ExtResource("2_dl8vf")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
