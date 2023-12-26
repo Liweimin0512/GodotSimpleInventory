@@ -1,12 +1,18 @@
 extends Resource
 class_name Item
 
-enum ITEM_TYPE{
+enum ITEM_TYPE {
 	NONE,
 	CONSUMABLE,	# 消耗品
 	EQUIPMENT,	# 装备
 	MATERIAL,	# 材料
 }
+# const ITEM_TYPE_CONST : Dictionary = {
+	#"NONE" : 0,
+	#"CONSUMABLE": 1,	# 消耗品
+	#"EQUIPMENT": 2,	# 装备
+	#"MATERIAL": 3,	# 材料
+#}
 
 # Item的属性
 @export var name = "道具名称"
@@ -39,6 +45,6 @@ func merge(other_item: Item) -> bool:
 		return true
 	return false
 
-## 更否合并
+## 能否合并
 func can_merge_with(other_item: Item) -> bool:
 	return self.name == other_item.name

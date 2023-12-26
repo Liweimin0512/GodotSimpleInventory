@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_ccqct"]
 [ext_resource type="PackedScene" uid="uid://cgv4kbrho80c8" path="res://src/widgets/inventory.tscn" id="2_7smc8"]
 [ext_resource type="PackedScene" uid="uid://b8fau1k8y5ynq" path="res://src/entity/player.tscn" id="3_liq35"]
-[ext_resource type="Texture2D" uid="uid://wnp6rxvtmm2a" path="res://assets/invertory_icon.png" id="4_nntte"]
+[ext_resource type="Texture2D" uid="uid://wnp6rxvtmm2a" path="res://icon.png" id="4_nntte"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ccqct")
@@ -19,7 +19,7 @@ visible = false
 offset_right = 291.0
 offset_bottom = 355.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="w_GM" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -28,35 +28,26 @@ offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/w_GM"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/w_GM/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "请输入指令"
 
-[node name="btn_submit" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="btn_submit" type="Button" parent="CanvasLayer/w_GM/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "提交"
 
 [node name="inventory_icon" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -83.0
-offset_right = -4.0
-offset_bottom = -43.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource("4_nntte")
 stretch_mode = 0
 
-[connection signal="text_submitted" from="CanvasLayer/MarginContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/btn_submit" to="." method="_on_btn_submit_pressed"]
+[connection signal="text_submitted" from="CanvasLayer/w_GM/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="CanvasLayer/w_GM/HBoxContainer/btn_submit" to="." method="_on_btn_submit_pressed"]
 [connection signal="pressed" from="CanvasLayer/inventory_icon" to="." method="_on_texture_button_pressed"]

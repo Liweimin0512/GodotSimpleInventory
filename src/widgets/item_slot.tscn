@@ -15,9 +15,5 @@ layout_mode = 2
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
-visible = false
-layout_mode = 2
-
 [node name="item_tile" parent="." instance=ExtResource("2_gijiy")]
 layout_mode = 2

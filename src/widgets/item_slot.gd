@@ -1,10 +1,9 @@
 extends MarginContainer
 
-@onready var reference_rect: ReferenceRect = $ReferenceRect
 @onready var color_rect: ColorRect = %ColorRect
 @onready var item_tile: MarginContainer = $item_tile
 
-var item = null:
+var item : Item = null:
 	set(value):
 		item = value
 		if item != null:
@@ -17,12 +16,12 @@ signal pressed
 func _ready() -> void:
 	self.gui_input.connect(_on_gui_input)
 
+## 选中道具槽
 func selected() -> void:
-	reference_rect.show()
 	color_rect.color = Color.WHITE
 
+## 取消选中道具槽
 func disselected() -> void:
-	reference_rect.hide()
 	color_rect.color = Color.BLACK
 
 func _on_gui_input(event: InputEvent) -> void:

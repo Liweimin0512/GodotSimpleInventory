@@ -1,10 +1,14 @@
 extends Control
 
-@onready var label_weight: Label = %label_weight
+## 分解按钮
 @onready var btn_decompose: Button = %btn_decompose
+## 整合按钮
 @onready var btn_pack: Button = %btn_pack
+## 背包孔网格
 @onready var grid_container: GridContainer = %GridContainer
+## 筛选道具的选项卡
 @onready var tab_bar: TabBar = %TabBar
+## 退出按钮
 @onready var btn_close: Button = %btn_close
 
 var c_inventory : C_Inventory:
@@ -14,7 +18,6 @@ var c_inventory : C_Inventory:
 		c_inventory = value
 		if c_inventory:
 			c_inventory.item_changed.connect(_on_item_changed)
-
 ## 当前选中的道具槽
 var selected_index : int = 0:
 	set(value):
@@ -31,8 +34,9 @@ var current_category: int = 0:
 	set(value):
 		c_inventory.current_category = value
 	get:
-		return current_category
+		return c_inventory.current_category
 
+## 开启背包
 func open() -> void:
 	self.show()
 	selected_index = 0

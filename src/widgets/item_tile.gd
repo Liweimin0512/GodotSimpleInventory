@@ -20,7 +20,7 @@ func update_display(res: Item) -> void:
 	else:
 		label.show()
 		label.text = str(item_res.quantity)
-	tooltip_text = item_res.name + " : " + item_res.description
+	# tooltip_text = item_res.name + " : " + item_res.description
 
 func _on_item_quantity_changed(value: int) -> void:
 	if item_res.max_stack > 1:

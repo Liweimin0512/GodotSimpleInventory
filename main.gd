@@ -6,8 +6,10 @@ extends Node2D
 @onready var player: Node2D = %player
 
 func _ready() -> void:
-	inventory.c_inventory = player.get_node("C_Inventory")
+	# C_Inventory依赖注入
+	inventory.c_inventory = player.get_node("C_Inventory") 
 
+## 将字符串转换为指令
 func process_command(command: String):
 	var parts = command.split(" ")
 	if parts.size() == 0:

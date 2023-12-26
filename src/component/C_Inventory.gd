@@ -6,27 +6,31 @@ class_name C_Inventory
 ## 当前选中的道具槽
 var selected_index : int = 0
 ## 当前选中的类型
-var current_category: int = 0
+var current_category: Item.ITEM_TYPE = 0
 ## 槽上限
 var MAX_SLOT_COUNT := 20
 
+## 道具变化时发出此信号
 signal item_changed
 
 func _ready() -> void:
 	items.resize(MAX_SLOT_COUNT)
 
+## 添加道具
 func add_item(item: Item) -> void:
 	var index = get_empty_index()
 	if index != -1:
 		items[index] = item
 	item_changed.emit()
 
+## 删除道具
 func remove_item(index: int) -> void:
 	var item = items[index]
 	if item:
 		items[index] = null
 	item_changed.emit()
 
+## 获取道具
 func get_item(index: int) -> Item:
 	return items[index]
 
@@ -69,7 +73,7 @@ func merge_similar_items():
 			if other_item != null and item.can_merge_with(other_item):
 				# 检查堆叠上限
 				item.merge(other_item)
-				if other_item.quantity <=0:
+				if other_item.quantity <= 0:
 					temp_items[j] = null
 	items = temp_items.filter(func(i): return i != null)
 	items.resize(MAX_SLOT_COUNT)
