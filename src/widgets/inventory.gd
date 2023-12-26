@@ -52,9 +52,9 @@ func switch_category_tab(tab: int) -> void:
 	update_display()
 
 ## 获取分类的道具
-func get_category_items(category: int) -> Array[Item]:
+func get_category_items() -> Array[Item]:
 	var items = c_inventory.items.duplicate()
-	if category == 0:
+	if current_category == 0:
 		return items
 	var filter_items : Array = items.filter(
 		func(item: Item):
@@ -66,7 +66,7 @@ func get_category_items(category: int) -> Array[Item]:
 
 ## 更新显示
 func update_display() -> void:
-	var items : Array[Item] = get_category_items(current_category)
+	var items : Array[Item] = get_category_items()
 	for index in items.size():
 		var slot = grid_container.get_child(index)
 		slot.item = items[index]
