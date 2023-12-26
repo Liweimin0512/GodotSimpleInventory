@@ -15,40 +15,58 @@ var c_inventory : C_Inventory:
 	set(value):
 		if c_inventory:
 			c_inventory.item_changed.disconnect(_on_item_changed)
+			var index = 0
+			for slot in grid_container.get_children():
+				slot.pressed.disconnect(_on_slot_pressed.bind(index))
+				index += 1
 		c_inventory = value
 		if c_inventory:
 			c_inventory.item_changed.connect(_on_item_changed)
+			var index = 0
+			for slot in grid_container.get_children():
+				slot.pressed.connect(_on_slot_pressed.bind(index))
+				slot.item = c_inventory.items[index]
+				index += 1
 ## 当前选中的道具槽
 var selected_index : int = 0:
 	set(value):
 		var slot = get_slot(selected_index)
 		slot.disselected()
-		c_inventory.selected_index = value
+		selected_index = value
 		slot = get_slot(selected_index)
 		slot.selected()
-	get:
-		return c_inventory.selected_index
 
 ## 当前选中的类型
-var current_category: int = 0:
-	set(value):
-		c_inventory.current_category = value
-	get:
-		return c_inventory.current_category
+var current_category: int = 0
 
 ## 开启背包
 func open() -> void:
-	self.show()
 	selected_index = 0
-	var index = 0
-	for slot in grid_container.get_children():
-		slot.pressed.connect(_on_slot_pressed.bind(index))
-		slot.item = c_inventory.items[index]
-		index += 1
+	tab_bar.current_tab = 0
+	self.show()
+
+## 切换分类页签
+func switch_category_tab(tab: int) -> void:
+	selected_index = 0
+	current_category = tab
+	update_display()
+
+## 获取分类的道具
+func get_category_items(category: int) -> Array[Item]:
+	var items = c_inventory.items.duplicate()
+	if category == 0:
+		return items
+	var filter_items : Array = items.filter(
+		func(item: Item):
+			if item == null: return false
+			return item.category == current_category
+	)
+	filter_items.resize(c_inventory.MAX_SLOT_COUNT)
+	return filter_items
 
 ## 更新显示
 func update_display() -> void:
-	var items = c_inventory.filter_items_by_category()
+	var items : Array[Item] = get_category_items(current_category)
 	for index in items.size():
 		var slot = grid_container.get_child(index)
 		slot.item = items[index]
@@ -67,8 +85,7 @@ func _on_btn_pack_pressed() -> void:
 	c_inventory.pack_items()
 
 func _on_tab_bar_tab_changed(tab: int) -> void:
-	current_category = tab
-	update_display()
+	switch_category_tab(tab)
 
 func _on_btn_close_pressed() -> void:
 	self.hide()

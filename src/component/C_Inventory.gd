@@ -3,10 +3,6 @@ class_name C_Inventory
 
 ## 存放道具ItemResource的数组
 @export var items : Array[Item] = []
-## 当前选中的道具槽
-var selected_index : int = 0
-## 当前选中的类型
-var current_category: Item.ITEM_TYPE = 0
 ## 槽上限
 var MAX_SLOT_COUNT := 20
 
@@ -33,19 +29,6 @@ func remove_item(index: int) -> void:
 ## 获取道具
 func get_item(index: int) -> Item:
 	return items[index]
-
-## 按分类筛选道具
-func filter_items_by_category() -> Array[Item]:
-	selected_index = 0
-	if current_category == 0:
-		return items
-	var filter_items : Array = items.filter(
-		func(item: Item):
-			if item == null: return false
-			return item.category == current_category
-	)
-	filter_items.resize(MAX_SLOT_COUNT)
-	return filter_items
 
 ## 获取空的索引
 func get_empty_index() -> int:

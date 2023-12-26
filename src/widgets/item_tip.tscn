@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5c5g8gyika7d"]
 
 [ext_resource type="Script" path="res://src/widgets/item_tip.gd" id="1_cg4ha"]
-[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon_godot.svg" id="2_2oeta"]
+[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="2_3n0ao"]
 
 [node name="item_tip" type="MarginContainer"]
 script = ExtResource("1_cg4ha")
@@ -29,7 +29,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("2_2oeta")
+texture = ExtResource("2_3n0ao")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
