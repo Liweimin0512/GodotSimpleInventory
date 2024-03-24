@@ -17,14 +17,14 @@ func add_item(item: Item) -> void:
 	var index = get_empty_index()
 	if index != -1:
 		items[index] = item
-	item_changed.emit()
+		item_changed.emit()
 
 ## 删除道具
 func remove_item(index: int) -> void:
 	var item = items[index]
 	if item:
 		items[index] = null
-	item_changed.emit()
+		item_changed.emit()
 
 ## 获取道具
 func get_item(index: int) -> Item:

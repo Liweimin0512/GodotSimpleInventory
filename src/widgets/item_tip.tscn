@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="2_3n0ao"]
 
 [node name="item_tip" type="MarginContainer"]
+offset_right = 152.0
+offset_bottom = 216.0
 script = ExtResource("1_cg4ha")
 
 [node name="Panel" type="Panel" parent="."]

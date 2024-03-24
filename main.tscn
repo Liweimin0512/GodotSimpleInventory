@@ -24,7 +24,6 @@ unique_name_in_owner = true
 visible = false
 offset_right = 291.0
 offset_bottom = 355.0
-mouse_filter = 0
 
 [node name="w_GM" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 12
