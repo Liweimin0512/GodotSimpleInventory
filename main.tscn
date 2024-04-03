@@ -14,6 +14,7 @@ unique_name_in_owner = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="inventory_icon" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("4_nntte")
@@ -26,25 +27,32 @@ offset_right = 291.0
 offset_bottom = 355.0
 
 [node name="w_GM" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -31.0
+offset_left = -162.0
+offset_top = -81.0
+offset_right = 162.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/w_GM"]
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/w_GM/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "请输入指令"
 
 [node name="btn_submit" type="Button" parent="CanvasLayer/w_GM/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 35)
 layout_mode = 2
 text = "提交"
 

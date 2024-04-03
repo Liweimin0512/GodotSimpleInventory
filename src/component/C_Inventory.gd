@@ -1,13 +1,29 @@
 extends Node
 class_name C_Inventory
 
+
+
 ## 存放道具ItemResource的数组
 @export var items : Array[Item] = []
+## 装备槽: 对应名称，唯一ID, 值包括装备类型和对应装备
+@export var equip_slots : Dictionary = {
+	"chest" : [Equip.EQUIP_TYPE.CHEST, null], 
+	"feet" : [Equip.EQUIP_TYPE.FEET, null], 
+	"head" : [Equip.EQUIP_TYPE.HEAD, null], 
+	"legs" : [Equip.EQUIP_TYPE.LEGS, null],
+	"necklace" : [Equip.EQUIP_TYPE.NECKLACE, null], 
+	"weapon" : [Equip.EQUIP_TYPE.WEAPON, null], 
+	"ring1" : [Equip.EQUIP_TYPE.RING, null], 
+	"ring2" : [Equip.EQUIP_TYPE.RING, null], 
+	"ring3" : [Equip.EQUIP_TYPE.RING, null], 
+}
+
 ## 槽上限
 var MAX_SLOT_COUNT := 20
 
 ## 道具变化时发出此信号
 signal item_changed
+signal equip_changed(equip_slot_name : StringName, equip : Equip)
 
 func _ready() -> void:
 	items.resize(MAX_SLOT_COUNT)
@@ -70,3 +86,59 @@ func sort_items_by_type():
 	)
 	items = temp_items
 	items.resize(MAX_SLOT_COUNT)
+
+## 使用道具
+func use_item(item : Item) -> void:
+	if item.category == Item.ITEM_TYPE.EQUIPMENT:
+		equip_item(item)
+
+## 装备道具
+func equip_item(equip : Equip) -> void:
+	items[items.find(equip)] = null
+	var empty_slot : StringName = _get_empty_equip_slot_name(equip)
+	if empty_slot == "":
+		# 没有空装备位
+		var slot : StringName = _get_equip_slot_name(equip)
+		var old_equip : Equip = equip_slots[slot][1]
+		equip_slots[slot][1] = equip
+		add_item(old_equip)
+		equip_changed.emit(slot, equip)
+	else:
+		equip_slots[empty_slot][1] = equip
+		equip_changed.emit(empty_slot, equip)
+	item_changed.emit()
+
+## 卸载装备
+func unequip_item(equip : Equip) -> void:
+	if get_empty_index() == -1 : return
+	var slot : StringName = _get_equip_slot(equip)
+	equip_slots[slot][1] = null
+	equip_changed.emit(slot, null)
+	add_item(equip)
+
+## 获取装备所在的装备槽
+func _get_equip_slot(equip : Equip) -> StringName:
+	for slot_name in equip_slots.keys():
+		var slot_equip : Equip = equip_slots[slot_name][1]
+		if equip == slot_equip:
+			return slot_name
+	return ""
+
+## 获取第一个类型匹配的装备槽
+func _get_equip_slot_name(equip : Equip) -> StringName:
+	var equip_type : Equip.EQUIP_TYPE = equip.equip_type
+	for slot_name in equip_slots.keys():
+		var slot_type : Equip.EQUIP_TYPE = equip_slots[slot_name][0]
+		if slot_type == equip_type:
+			return slot_name
+	return ""
+
+## 获得空装备槽
+func _get_empty_equip_slot_name(equip : Equip) -> StringName:
+	var equip_type : Equip.EQUIP_TYPE = equip.equip_type
+	for slot_name in equip_slots.keys():
+		var slot_type : Equip.EQUIP_TYPE = equip_slots[slot_name][0]
+		var slot_equip : Equip = equip_slots[slot_name][1]
+		if slot_type == equip_type and slot_equip == null:
+			return slot_name
+	return ""

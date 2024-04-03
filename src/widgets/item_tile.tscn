@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfb2bsiwl44wm"]
 
 [ext_resource type="Script" path="res://src/widgets/item_tile.gd" id="1_f83w0"]
-[ext_resource type="Texture2D" uid="uid://byp2acad4ffjv" path="res://icon.svg" id="2_de8fw"]
+[ext_resource type="Texture2D" uid="uid://dbxonfastqx72" path="res://assets/items/egg.tres" id="2_dwvmm"]
 
 [node name="item_tile" type="MarginContainer"]
-offset_right = 19.0
-offset_bottom = 49.0
+offset_right = 64.0
+offset_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+tooltip_text = "这里必须有内容，_make_custom_tooltip方法才能正常使用"
 script = ExtResource("1_f83w0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -15,7 +16,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("2_de8fw")
+texture = ExtResource("2_dwvmm")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
@@ -25,7 +26,7 @@ size_flags_vertical = 8
 mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 18
 text = "9999"
 horizontal_alignment = 2
 vertical_alignment = 2

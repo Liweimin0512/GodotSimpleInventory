@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cmeu7xqty8cvs"]
+
+[ext_resource type="Texture2D" uid="uid://drulell2ls713" path="res://assets/items/ring_2.tres" id="1_hl1s3"]
+[ext_resource type="Script" path="res://src/items/equip.gd" id="2_yodpc"]
+
+[resource]
+script = ExtResource("2_yodpc")
+equip_type = 5
+name = "蓝钻石指环"
+icon = ExtResource("1_hl1s3")
+description = "你喜欢那个钻石，尽管你知道那只是一场骗局"
+category = 2
+max_stack = 1
+quantity = 1
+weight = 10
+attributes = {
+"攻击力": 22.0
+}

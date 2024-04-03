@@ -1,4 +1,5 @@
 extends Control
+class_name InventoryWidget
 
 ## 分解按钮
 @onready var btn_decompose: Button = %btn_decompose
@@ -11,22 +12,8 @@ extends Control
 ## 退出按钮
 @onready var btn_close: Button = %btn_close
 
-var c_inventory : C_Inventory:
-	set(value):
-		if c_inventory:
-			c_inventory.item_changed.disconnect(_on_item_changed)
-			var index = 0
-			for slot in grid_container.get_children():
-				slot.pressed.disconnect(_on_slot_pressed.bind(index))
-				index += 1
-		c_inventory = value
-		if c_inventory:
-			c_inventory.item_changed.connect(_on_item_changed)
-			var index = 0
-			for slot in grid_container.get_children():
-				slot.pressed.connect(_on_slot_pressed.bind(index))
-				slot.item = c_inventory.items[index]
-				index += 1
+var c_inventory : C_Inventory = null
+
 ## 当前选中的道具槽
 var selected_index : int = 0:
 	set(value):
@@ -38,6 +25,21 @@ var selected_index : int = 0:
 
 ## 当前选中的类型
 var current_category: int = 0
+
+## 背包初始化
+func initialize(inventory : C_Inventory) -> void:
+	c_inventory = inventory
+	c_inventory.item_changed.connect(_on_item_changed)
+	c_inventory.equip_changed.connect(_on_equip_changed)
+	var index = 0
+	for slot in get_tree().get_nodes_in_group("item_slot"):
+		slot.mouse_button_left_pressed.connect(_on_mouse_button_left_pressed.bind(index))
+		slot.mouse_button_right_pressed.connect(_on_mouse_button_right_pressed.bind(slot))
+		if not slot.is_in_group("equip_slot"):
+			slot.item = c_inventory.items[index]
+			index += 1
+		else:
+			slot.item = c_inventory.equip_slots[slot.equip_slot_name][1]
 
 ## 开启背包
 func open() -> void:
@@ -75,8 +77,16 @@ func update_display() -> void:
 func get_slot(index: int) -> Control:
 	return grid_container.get_child(index)
 
-func _on_slot_pressed(index: int) -> void:
+## 鼠标左键点击
+func _on_mouse_button_left_pressed(index: int) -> void:
 	selected_index = index
+
+## 鼠标右键点击
+func _on_mouse_button_right_pressed(slot : ItemSlot) -> void:
+	if slot.is_in_group("equip_slot"):
+		c_inventory.unequip_item(slot.item)
+	else:
+		c_inventory.use_item(slot.item)
 
 func _on_btn_decompose_pressed() -> void:
 	c_inventory.remove_item(selected_index)
@@ -92,3 +102,9 @@ func _on_btn_close_pressed() -> void:
 
 func _on_item_changed() -> void:
 	update_display()
+
+func _on_equip_changed(equip_slot_name : StringName, equip : Equip) -> void:
+	var equip_slots = get_tree().get_nodes_in_group("equip_slot")
+	for slot in equip_slots:
+		if slot.equip_slot_name == equip_slot_name:
+			slot.item = equip

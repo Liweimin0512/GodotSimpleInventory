@@ -1,5 +1,7 @@
 extends MarginContainer
 
+const S_ITEM_TIP = preload("res://src/widgets/item_tip.tscn")
+
 @export var item_res: Item:
 	set(value):
 		if item_res != null:
@@ -9,7 +11,6 @@ extends MarginContainer
 			item_res.quantity_changed.connect(_on_item_quantity_changed)
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
-var s_item_tip = preload("res://src/widgets/item_tip.tscn")
 
 ## 更新显示
 func update_display(res: Item) -> void:
@@ -27,6 +28,6 @@ func _on_item_quantity_changed(value: int) -> void:
 		label.text = str(item_res.quantity)
 
 func _make_custom_tooltip(_for_text: String) -> Object:
-	var item_tip = s_item_tip.instantiate()
+	var item_tip = S_ITEM_TIP.instantiate()
 	item_tip.update_display(item_res)
 	return item_tip

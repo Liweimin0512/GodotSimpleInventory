@@ -7,7 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	# C_Inventory依赖注入
-	inventory.c_inventory = player.get_node("C_Inventory") 
+	inventory.initialize(player.get_node("C_Inventory"))
 
 ## 将字符串转换为指令
 func process_command(command: String):
@@ -26,7 +26,9 @@ func process_command(command: String):
 func add_item(item_name: String, item_count: String) -> void:
 	var _count = int(item_count)
 	var item = create_item(item_name, _count)
-	if item == null: return
+	if item == null: 
+		push_error("can not found item by name: ", item_name)
+		return
 	var c_inventory: C_Inventory = player.get_node("C_Inventory")
 	c_inventory.add_item(item)
 	print_debug("add_item: ", item_name, " count: ", item_count)

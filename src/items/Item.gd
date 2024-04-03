@@ -18,6 +18,7 @@ enum ITEM_TYPE {
 @export var name = "道具名称"
 @export var icon: Texture = null
 @export var description = "道具描述"
+## 道具类型
 @export var category : ITEM_TYPE = ITEM_TYPE.NONE # 如 "consumable", "equipment", "material" 等
 @export var max_stack := 1
 @export var quantity = 1 : 
