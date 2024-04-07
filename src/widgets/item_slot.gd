@@ -11,14 +11,17 @@ signal mouse_button_right_pressed
 
 func _ready() -> void:
 	self.gui_input.connect(_on_gui_input)
+	color_rect.visible = false
 
 ## 选中道具槽
 func selected() -> void:
 	color_rect.color = Color.WHITE
+	color_rect.visible = true
 
 ## 取消选中道具槽
 func disselected() -> void:
-	color_rect.color = Color.BLACK
+	#color_rect.color = Color.BLACK
+	color_rect.visible = false
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed() :

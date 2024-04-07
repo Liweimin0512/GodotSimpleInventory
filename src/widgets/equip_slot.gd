@@ -2,15 +2,6 @@
 extends ItemSlot
 class_name EquipSlot
 
-const EQUIP_SLOT_TYPE : Array[Equip.EQUIP_TYPE] = [
-	Equip.EQUIP_TYPE.CHEST,
-	Equip.EQUIP_TYPE.FEET,
-	Equip.EQUIP_TYPE.HEAD,
-	Equip.EQUIP_TYPE.LEGS,
-	Equip.EQUIP_TYPE.NECKLACE,
-	Equip.EQUIP_TYPE.RING,
-	Equip.EQUIP_TYPE.WEAPON,
-]
 const EQUIP_SLOT_TEXTURE : Array[Texture2D] = [
 	preload("res://assets/equip_slot/chest_slot.tres"),
 	preload("res://assets/equip_slot/feet_slot.tres"),
@@ -34,8 +25,7 @@ func _ready() -> void:
 	super()
 
 func _display_equip_slot() -> void:
-	var slot_index : int = EQUIP_SLOT_TYPE.find(equip_type)
-	if slot_index == -1 : return
+	var slot_index : int = equip_type
 	tr_slot.texture = EQUIP_SLOT_TEXTURE[slot_index]
 
 func _item_setter(value : Item) -> void:

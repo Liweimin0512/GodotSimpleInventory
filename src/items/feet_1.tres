@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1rv0vtrcguqr"]
+[gd_resource type="Resource" script_class="Equip" load_steps=3 format=3 uid="uid://c1rv0vtrcguqr"]
 
 [ext_resource type="Texture2D" uid="uid://m3pmae6cewms" path="res://assets/items/equip_feet.tres" id="1_ashs0"]
 [ext_resource type="Script" path="res://src/items/equip.gd" id="2_epnuj"]

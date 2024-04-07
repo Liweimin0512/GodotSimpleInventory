@@ -1,8 +1,6 @@
 extends Node
 class_name C_Inventory
 
-
-
 ## 存放道具ItemResource的数组
 @export var items : Array[Item] = []
 ## 装备槽: 对应名称，唯一ID, 值包括装备类型和对应装备

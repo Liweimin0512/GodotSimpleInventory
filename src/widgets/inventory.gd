@@ -88,9 +88,11 @@ func _on_mouse_button_right_pressed(slot : ItemSlot) -> void:
 	else:
 		c_inventory.use_item(slot.item)
 
+## 分解道具
 func _on_btn_decompose_pressed() -> void:
 	c_inventory.remove_item(selected_index)
 
+## 整理背包
 func _on_btn_pack_pressed() -> void:
 	c_inventory.pack_items()
 

@@ -20,5 +20,5 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 texture = ExtResource("2_k0avv")
 
-[node name="item_tile" parent="." index="2"]
+[node name="item_tile" parent="." index="3"]
 visible = false
