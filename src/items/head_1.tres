@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Equip" load_steps=3 format=3 uid="uid://bvgf01bwk7pjw"]
 
-[ext_resource type="Texture2D" uid="uid://td04gcusfsxi" path="res://assets/items/equip_head.tres" id="1_hn47p"]
+[ext_resource type="Texture2D" uid="uid://td04gcusfsxi" path="res://assets/textures/items/equip_head.tres" id="1_hn47p"]
 [ext_resource type="Script" path="res://src/items/equip.gd" id="2_wx743"]
 
 [resource]

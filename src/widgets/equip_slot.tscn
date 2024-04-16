@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpmild4bh2ry1" path="res://src/widgets/item_slot.tscn" id="1_r13cl"]
 [ext_resource type="Script" path="res://src/widgets/equip_slot.gd" id="1_r66q0"]
-[ext_resource type="Texture2D" uid="uid://fhgibxljfpe4" path="res://assets/equip_slot/chest_slot.tres" id="2_k0avv"]
+[ext_resource type="Texture2D" uid="uid://fhgibxljfpe4" path="res://assets/textures/equip_slot/chest_slot.tres" id="2_k0avv"]
 
 [node name="equip_slot" groups=["equip_slot"] instance=ExtResource("1_r13cl")]
 script = ExtResource("1_r66q0")

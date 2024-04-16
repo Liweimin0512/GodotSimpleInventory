@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c6fw84b58us31"]
 
-[ext_resource type="Texture2D" uid="uid://dm7ehxjpn6yum" path="res://assets/items/necklace_3.tres" id="1_nyyhv"]
+[ext_resource type="Texture2D" uid="uid://dm7ehxjpn6yum" path="res://assets/textures/items/necklace_3.tres" id="1_nyyhv"]
 [ext_resource type="Script" path="res://src/items/equip.gd" id="2_mioo2"]
 
 [resource]

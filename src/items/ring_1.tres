@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://chtwcjxkrovrw"]
 
-[ext_resource type="Texture2D" uid="uid://1jo3faj3dk5m" path="res://assets/items/ring_1.tres" id="1_5xgbi"]
+[ext_resource type="Texture2D" uid="uid://1jo3faj3dk5m" path="res://assets/textures/items/ring_1.tres" id="1_5xgbi"]
 [ext_resource type="Script" path="res://src/items/equip.gd" id="2_a2ndd"]
 
 [resource]

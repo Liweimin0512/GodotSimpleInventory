@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://drdht4qwvmvdd"]
 
-[ext_resource type="Texture2D" uid="uid://08hfv1h1mcde" path="res://assets/items/equip_chest_3.tres" id="1_qpenq"]
+[ext_resource type="Texture2D" uid="uid://08hfv1h1mcde" path="res://assets/textures/items/equip_chest_3.tres" id="1_qpenq"]
 [ext_resource type="Script" path="res://src/items/equip.gd" id="2_24fsa"]
 
 [resource]

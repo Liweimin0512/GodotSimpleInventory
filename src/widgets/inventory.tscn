@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgv4kbrho80c8"]
+[gd_scene load_steps=10 format=3 uid="uid://cgv4kbrho80c8"]
 
 [ext_resource type="Script" path="res://src/widgets/inventory.gd" id="1_e1tsy"]
-[ext_resource type="Texture2D" uid="uid://b4mnhn6ma74vi" path="res://assets/GUI.png" id="2_fj6vp"]
+[ext_resource type="Texture2D" uid="uid://b4mnhn6ma74vi" path="res://assets/textures/GUI.png" id="2_fj6vp"]
+[ext_resource type="FontFile" uid="uid://bj4wlflwm0lq7" path="res://assets/fonts/SourceHanSansSC-Regular-2.otf" id="3_h6u1y"]
 [ext_resource type="PackedScene" uid="uid://dqf8rbssc0uqm" path="res://src/widgets/equip_slot.tscn" id="4_m0rqm"]
-[ext_resource type="Texture2D" uid="uid://dfa2cht5nd7ep" path="res://assets/buttons_4x.png" id="5_0pw4w"]
+[ext_resource type="Texture2D" uid="uid://dfa2cht5nd7ep" path="res://assets/textures/buttons_4x.png" id="5_0pw4w"]
 [ext_resource type="PackedScene" uid="uid://bpmild4bh2ry1" path="res://src/widgets/item_slot.tscn" id="5_ovt45"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldjmk"]
@@ -89,6 +90,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_h6u1y")
 text = "背包"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -216,6 +218,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_h6u1y")
 tab_count = 4
 tab_0/title = "全部"
 tab_1/title = "消耗品"
@@ -325,6 +328,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_h6u1y")
 text = "分解"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -348,6 +352,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_h6u1y")
 text = "整理"
 horizontal_alignment = 1
 vertical_alignment = 1

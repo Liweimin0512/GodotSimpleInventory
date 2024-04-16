@@ -3,13 +3,13 @@ extends ItemSlot
 class_name EquipSlot
 
 const EQUIP_SLOT_TEXTURE : Array[Texture2D] = [
-	preload("res://assets/equip_slot/chest_slot.tres"),
-	preload("res://assets/equip_slot/feet_slot.tres"),
-	preload("res://assets/equip_slot/head_slot.tres"),
-	preload("res://assets/equip_slot/legs_slot.tres"),
-	preload("res://assets/equip_slot/necklace_slot.tres"),
-	preload("res://assets/equip_slot/ring_slot.tres"),
-	preload("res://assets/equip_slot/weapon_slot.tres"),
+	preload("res://assets/textures/equip_slot/chest_slot.tres"),
+	preload("res://assets/textures/equip_slot/feet_slot.tres"),
+	preload("res://assets/textures/equip_slot/head_slot.tres"),
+	preload("res://assets/textures/equip_slot/legs_slot.tres"),
+	preload("res://assets/textures/equip_slot/necklace_slot.tres"),
+	preload("res://assets/textures/equip_slot/ring_slot.tres"),
+	preload("res://assets/textures/equip_slot/weapon_slot.tres"),
 ]
 
 @onready var tr_slot: TextureRect = $MarginContainer/tr_slot
