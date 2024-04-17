@@ -34,14 +34,11 @@ func add_item(item: Item) -> void:
 		item_changed.emit()
 
 ## 删除道具
-func remove_item(item: Item) -> void:
-	if not item : return
-	var index : int = 0
-	for i in items:
-		if i == item:
-			items[index] = null
-		index += 1
-	item_changed.emit()
+func remove_item(index: int) -> void:
+	var item = items[index]
+	if item:
+		items[index] = null
+		item_changed.emit()
 
 ## 获取道具
 func get_item(index: int) -> Item:

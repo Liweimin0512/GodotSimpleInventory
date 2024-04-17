@@ -17,11 +17,12 @@ var c_inventory : C_Inventory = null
 ## 当前选中的道具槽
 var selected_index : int = 0:
 	set(value):
-		var slot : ItemSlot = get_slot(selected_index)
+		var slot = get_slot(selected_index)
 		slot.disselected()
 		selected_index = value
 		slot = get_slot(selected_index)
 		slot.selected()
+
 ## 当前选中的类型
 var current_category: int = 0
 
@@ -73,7 +74,7 @@ func update_display() -> void:
 		slot.item = items[index]
 
 ## 获取槽
-func get_slot(index: int) -> ItemSlot:
+func get_slot(index: int) -> Control:
 	return grid_container.get_child(index)
 
 ## 鼠标左键点击
@@ -89,10 +90,7 @@ func _on_mouse_button_right_pressed(slot : ItemSlot) -> void:
 
 ## 分解道具
 func _on_btn_decompose_pressed() -> void:
-	var item : Item = get_slot(selected_index).item
-	if not item:
-		return
-	c_inventory.remove_item(item)
+	c_inventory.remove_item(selected_index)
 
 ## 整理背包
 func _on_btn_pack_pressed() -> void:
