@@ -90,7 +90,10 @@ func _on_mouse_button_right_pressed(slot : ItemSlot) -> void:
 
 ## 分解道具
 func _on_btn_decompose_pressed() -> void:
-	c_inventory.remove_item(selected_index)
+	var slot : ItemSlot = get_slot(selected_index)
+	var selected_item : Item = slot.item
+	if selected_item :
+		c_inventory.remove_item(selected_item)
 
 ## 整理背包
 func _on_btn_pack_pressed() -> void:
