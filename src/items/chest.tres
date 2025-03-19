@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://wbfjtovtjlpr"]
 
-[ext_resource type="Texture2D" uid="uid://cc6ylufev73yb" path="res://assets/textures/items/equip_chest.tres" id="1_831st"]
-[ext_resource type="Script" path="res://src/items/equip.gd" id="2_lb15x"]
+[ext_resource type="Texture2D" uid="uid://cc6ylufev73yb" path="res://addons/simple_inventory/assets/textures/items/equip_chest.tres" id="1_831st"]
+[ext_resource type="Script" path="res://addons/simple_inventory/equip.gd" id="2_lb15x"]
 
 [resource]
 script = ExtResource("2_lb15x")

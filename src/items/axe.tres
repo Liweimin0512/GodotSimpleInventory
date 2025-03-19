@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Equip" load_steps=3 format=3 uid="uid://ced6kdegijcad"]
 
-[ext_resource type="Texture2D" uid="uid://denlah5iok8hf" path="res://assets/textures/items/wood_axe.tres" id="1_r3mi8"]
-[ext_resource type="Script" path="res://src/items/equip.gd" id="2_7rnlf"]
+[ext_resource type="Texture2D" uid="uid://denlah5iok8hf" path="res://addons/simple_inventory/assets/textures/items/wood_axe.tres" id="1_r3mi8"]
+[ext_resource type="Script" path="res://addons/simple_inventory/equip.gd" id="2_7rnlf"]
 
 [resource]
 script = ExtResource("2_7rnlf")

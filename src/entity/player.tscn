@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8fau1k8y5ynq"]
+[gd_scene load_steps=4 format=3 uid="uid://b8fau1k8y5ynq"]
 
-[ext_resource type="Script" path="res://src/component/C_Inventory.gd" id="1_xaw6l"]
+[ext_resource type="Script" path="res://addons/simple_inventory/C_Inventory.gd" id="1_xaw6l"]
 [ext_resource type="Resource" uid="uid://ced6kdegijcad" path="res://src/items/axe.tres" id="2_clkul"]
+[ext_resource type="Script" path="res://addons/simple_inventory/Item.gd" id="2_u4kir"]
 
 [node name="player" type="Node2D"]
 
 [node name="C_Inventory" type="Node" parent="."]
 script = ExtResource("1_xaw6l")
-items = Array[Resource("res://src/items/Item.gd")]([ExtResource("2_clkul")])
+items = Array[ExtResource("2_u4kir")]([ExtResource("2_clkul")])

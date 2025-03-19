@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bblq28f0b5xan"]
 
-[ext_resource type="Texture2D" uid="uid://bvgetb1jxesqm" path="res://assets/textures/items/potion_mana.tres" id="1_csbsu"]
-[ext_resource type="Script" path="res://src/items/Item.gd" id="1_gya07"]
+[ext_resource type="Texture2D" uid="uid://bvgetb1jxesqm" path="res://addons/simple_inventory/assets/textures/items/potion_mana.tres" id="1_csbsu"]
+[ext_resource type="Script" path="res://addons/simple_inventory/Item.gd" id="1_gya07"]
 
 [resource]
 script = ExtResource("1_gya07")

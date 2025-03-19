@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cpnvwp1yl86va"]
 
-[ext_resource type="Texture2D" uid="uid://dbxonfastqx72" path="res://assets/textures/items/egg.tres" id="1_v410b"]
-[ext_resource type="Script" path="res://src/items/Item.gd" id="2_movvq"]
+[ext_resource type="Texture2D" uid="uid://dbxonfastqx72" path="res://addons/simple_inventory/assets/textures/items/egg.tres" id="1_v410b"]
+[ext_resource type="Script" path="res://addons/simple_inventory/Item.gd" id="2_movvq"]
 
 [resource]
 script = ExtResource("2_movvq")

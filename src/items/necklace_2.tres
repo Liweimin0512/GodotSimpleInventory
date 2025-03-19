@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dcsgladnjeeig"]
 
-[ext_resource type="Texture2D" uid="uid://bhk3vw2vp36i0" path="res://assets/textures/items/necklace_2.tres" id="1_r46ar"]
-[ext_resource type="Script" path="res://src/items/equip.gd" id="2_t7kxq"]
+[ext_resource type="Texture2D" uid="uid://bhk3vw2vp36i0" path="res://addons/simple_inventory/assets/textures/items/necklace_2.tres" id="1_r46ar"]
+[ext_resource type="Script" path="res://addons/simple_inventory/equip.gd" id="2_t7kxq"]
 
 [resource]
 script = ExtResource("2_t7kxq")

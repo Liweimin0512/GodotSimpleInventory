@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://lfmup8lffy6h"]
 
-[ext_resource type="Texture2D" uid="uid://bwepkpo366kmw" path="res://assets/textures/items/sword_2.tres" id="1_1rwjd"]
-[ext_resource type="Script" path="res://src/items/equip.gd" id="2_fdsvo"]
+[ext_resource type="Texture2D" uid="uid://bwepkpo366kmw" path="res://addons/simple_inventory/assets/textures/items/sword_2.tres" id="1_1rwjd"]
+[ext_resource type="Script" path="res://addons/simple_inventory/equip.gd" id="2_fdsvo"]
 
 [resource]
 script = ExtResource("2_fdsvo")
